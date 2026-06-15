@@ -137,13 +137,14 @@ img {
 
 .btn-primary {
     background-color: var(--accent-color);
-    color: var(--white);
+    color: var(--white) !important; /* Força o branco em qualquer situação */
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .btn-primary:hover {
     background-color: var(--accent-dark);
+    color: var(--white) !important;
     transform: translateY(-2px);
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
 }
@@ -228,7 +229,8 @@ header nav {
     margin-left: auto;
 }
 
-.nav-menu li a {
+/* Corrigido para não aplicar a cor escura no botão dentro do menu */
+.nav-menu li a:not(.btn) {
     font-weight: 500;
     color: var(--text-heading);
     font-size: 0.95rem;
@@ -793,7 +795,7 @@ footer {
     position: fixed;
     bottom: 2rem;
     right: 2rem;
-    background-color: #25D366; /* Mantive a cor oficial do WhatsApp */
+    background-color: #25D366; 
     color: white;
     width: 60px;
     height: 60px;
